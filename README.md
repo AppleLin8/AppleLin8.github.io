@@ -4,16 +4,18 @@
     </div>
     <h1>AppleLin8.github.io</h1>
     <p>基于 jekyll 的响应式 Github Pages 个人博客网站</p>
-    
+
 [![license](https://img.shields.io/github/license/AppleLin8/AppleLin8.github.io)](https://github.com/AppleLin8/AppleLin8.github.io/blob/master/COPYING)
 [![Gitter](https://img.shields.io/gitter/room/AppleLin8/AppleLin8.github.i0)](https://gitter.im/AppleLin8-github-io/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Website](https://img.shields.io/website?down_color=lightgrey%09&down_message=offline&up_color=%09aqua&up_message=online&url=https%3A%2F%2FAppleLin8.github.io)](https://AppleLin8.github.io)
 [![GitHub deployments](https://img.shields.io/github/deployments/AppleLin8/AppleLin8.github.io/github-pages)](https://github.com/AppleLin8/AppleLin8.github.io/deployments)
 ![GitHub top language](https://img.shields.io/github/languages/top/AppleLin8/AppleLin8.github.io)
+
 ![GitHub stars](https://img.shields.io/github/stars/AppleLin8/AppleLin8.github.io?style=flat)
 ![GitHub forks](https://img.shields.io/github/forks/AppleLin8/AppleLin8.github.io?style=flat)
 ![GitHub followers](https://img.shields.io/github/followers/AppleLin8?style=flat)
 [![Github issues](https://img.shields.io/badge/issues-welcome-success)](https://github.com/AppleLin8/AppleLin8.github.io/issues)
+
 [![Github pull request](https://img.shields.io/badge/pull%20request-welcome-success)](https://github.com/AppleLin8/AppleLin8.github.io/pulls)
 ![GitHub repo size](https://img.shields.io/github/repo-size/AppleLin8/AppleLin8.github.io)
 </div>
@@ -76,7 +78,7 @@ theme: jekyll-theme-slate
 
 提交推送代码后，GitHub Pages页面（即博客网站主页）更新较慢，所以推荐搭建本地开发环境，以便调试。
 
-详细教程请见：[安装 jekyll](https://AppleLin8.github.io/2018/04/01/github-pages-blog#%E5%AE%89%E8%A3%85jekyll-)
+详细教程请见：[安装 jekyll](https://AppleLin8.github.io/2020/11/17/any-questions-have-answers)
 
 配置好依赖后在项目主目录运行：
 ```cmd

@@ -1,3 +1,10 @@
+---
+title: any questions have answers
+layout: post
+categories: good idea
+tags: react state getter setter 状态
+excerpt: 记录一次开始
+---
 #any questions have answers
 
 - 你遇到的所有问题，都有答案。
