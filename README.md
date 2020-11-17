@@ -6,7 +6,6 @@
     <p>基于 jekyll 的响应式 Github Pages 个人博客网站</p>
     
 [![license](https://img.shields.io/github/license/AppleLin8/AppleLin8.github.io)](https://github.com/AppleLin8/AppleLin8.github.io/blob/master/COPYING)
-
 [![Gitter](https://img.shields.io/gitter/room/AppleLin8/AppleLin8.github.i0)](https://gitter.im/AppleLin8-github-io/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Website](https://img.shields.io/website?down_color=lightgrey%09&down_message=offline&up_color=%09aqua&up_message=online&url=https%3A%2F%2FAppleLin8.github.io)](https://AppleLin8.github.io)
 [![GitHub deployments](https://img.shields.io/github/deployments/AppleLin8/AppleLin8.github.io/github-pages)](https://github.com/AppleLin8/AppleLin8.github.io/deployments)
@@ -17,7 +16,6 @@
 [![Github issues](https://img.shields.io/badge/issues-welcome-success)](https://github.com/AppleLin8/AppleLin8.github.io/issues)
 [![Github pull request](https://img.shields.io/badge/pull%20request-welcome-success)](https://github.com/AppleLin8/AppleLin8.github.io/pulls)
 ![GitHub repo size](https://img.shields.io/github/repo-size/AppleLin8/AppleLin8.github.io)
-
 </div>
 
 ## 特性
