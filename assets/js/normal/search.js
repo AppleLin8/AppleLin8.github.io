@@ -1,6 +1,6 @@
 /**
  * 网站文章内容搜索功能实现
- * Copyright (C) 2020 knightyun. <https://github.com/knightyun/knightyun.github.io/assets/js/search.js>
+ * Copyright (C) 2020 AppleLin8. <https://github.com/AppleLin8/AppleLin8.github.io/assets/js/search.js>
  * @todo 多关键词搜索
  */
 
