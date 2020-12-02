@@ -4,7 +4,7 @@ layout: post
 categories: python
 date:   2020-12-2 12:30:28 +0800
 tags: python
-excerpt: python if __name__ == "__main__":
+excerpt: python if __name__ == "__main__"\:
 ---
 --------------------
 文章出自个人博客<https://applelin8.github.io/2020/12/2/python-main>，转载请申明
