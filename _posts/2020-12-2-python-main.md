@@ -12,7 +12,7 @@ excerpt: python __main__
 ------------------
 # content <span id="home">
 * [__main__](#1)
-
+* [read](#2)
 
 ----------------------------
 
@@ -45,5 +45,32 @@ def main():
     print("circle area: ", calc_circle_area(2))
     
 main()
+```
+
+# read <span id="2">
+
+```python
+# File: read.py
+
+import sys
+import re
+
+def read_cmd(file, type):
+    with open(file) as file:
+        i=0
+        for line in file:
+            if line.find(type) != -1 and line.find(',') != -1:
+                i+=1
+                #print(line,end='')
+                print(re.split(r'=| |,', line.strip())[0])
+        print('cmd count is %d'%(i))
+
+
+if __name__ == '__main__':
+    file=sys.argv[1]
+    type=sys.argv[2]
+    
+    print(file, type)
+    read_cmd(file, type)
 ```
 
