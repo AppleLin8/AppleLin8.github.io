@@ -2,7 +2,7 @@
 title: how to learn anything
 layout: post
 categories: good_idea
-tags: react state getter setter 状态
+tags: good_idea
 excerpt:  how to learn anything
 ---
 ## how to learn anything

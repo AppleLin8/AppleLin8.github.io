@@ -2,7 +2,7 @@
 title: any questions have answers
 layout: post
 categories: good_idea
-tags: react state getter setter 状态
+tags: hello
 excerpt: 记录一次开始
 ---
 #any questions have answers
