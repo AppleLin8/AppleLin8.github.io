@@ -2,7 +2,7 @@
 title: python main
 layout: post
 categories: python
-date:   2020-12-2 12:30:28 +0800
+date:   2020-12-2 12:06:28 +0800
 tags: python
 excerpt: python __main__
 ---
