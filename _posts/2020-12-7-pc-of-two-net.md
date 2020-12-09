@@ -25,5 +25,6 @@ other ping failed.
 # solution <span id="2">
 set ip router
 
+have nice day
 
 
