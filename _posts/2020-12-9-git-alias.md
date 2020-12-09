@@ -10,7 +10,10 @@ excerpt: git alias
 文章出自个人博客<https://applelin8.github.io/2020/12/9/git-alias>，转载请申明
 
 ------------------
+git cp = git cherry-pick
+
 # content <span id="home">
+
 * [git alias](#1)
 
 ----------------------------
