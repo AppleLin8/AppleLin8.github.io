@@ -15,6 +15,7 @@ excerpt: vscode remote
 # content <span id="home">
 
 * [how to use vscode](#1)
+* [extension](#2)
 
   
 ----------------------------
@@ -29,3 +30,7 @@ remote-ssh
 
 C/C++ IntelliSense, debugging, and code browsing.
 ![architecture](https://AppleLin8.github.io/assets/img/blog/vscode/remote-ssh_c_cpp_intellisense.png)
+
+# extension <span id="2">
+
+![architecture](https://AppleLin8.github.io/assets/img/blog/vscode/extension.png)
