@@ -16,6 +16,7 @@ excerpt: vscode remote
 
 * [how to use vscode](#1)
 * [extension](#2)
+* [shell](#3)
 
   
 ----------------------------
@@ -34,3 +35,7 @@ C/C++ IntelliSense, debugging, and code browsing.
 # extension <span id="2">
 
 ![architecture](https://AppleLin8.github.io/assets/img/blog/vscode/extension.png)
+
+# shell <span id="3">
+
+![architecture](https://AppleLin8.github.io/assets/img/blog/vscode/log_sh.png)
