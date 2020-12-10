@@ -16,7 +16,8 @@ excerpt: vscode remote
 
 * [how to use vscode](#1)
 * [extension](#2)
-* [shell](#3)
+* [gdb](#3)
+* [shell](#4)
 
   
 ----------------------------
@@ -36,6 +37,74 @@ C/C++ IntelliSense, debugging, and code browsing.
 
 ![architecture](https://AppleLin8.github.io/assets/img/blog/vscode/extension.png)
 
-# shell <span id="3">
+# gdb <span id="3">
+
+![architecture](https://AppleLin8.github.io/assets/img/blog/vscode/gdb.png)
+
+${workspace}/.vscode/launch.json
+
+```bash
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "gcc - 生成和调试活动文件",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "args": [ "ls"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C/C++: gcc build active file",
+            "miDebuggerPath": "/usr/bin/gdb"
+        }
+    ]
+}
+```
+
+${workspace}/.vscode/tasks.json
+
+```bash
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "C/C++: gcc build active file",
+            "command": "/usr/bin/gcc",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ],
+    "version": "2.0.0"
+}
+```
+
+
+
+# shell <span id="4">
 
 ![architecture](https://AppleLin8.github.io/assets/img/blog/vscode/log_sh.png)
