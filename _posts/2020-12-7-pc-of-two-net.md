@@ -29,7 +29,7 @@ ping 192.168.1.3
 
 
 
-![net](https://AppleLin8.github.io/assets/img/blog/it/2net_wifi_and_wire.png)
+![net](https://AppleLin8.github.io/assets/img/blog/2net_wifi_and_wire.png)
 
 # windows <span id="2">
 ```bash
