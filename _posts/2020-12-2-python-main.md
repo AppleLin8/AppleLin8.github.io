@@ -147,17 +147,15 @@ def draw_demo():
     draw(a)
 
 def draw_data(file):
-    x = []
+    a = np.asarray([])
     count = 0
-    
     with open(file) as file:
         for line in file:
             count += 1
-            x.append(eval(line.strip()))
+            a = np.append(a,eval(line.strip()))
    
     print("number count=", count)
-
-    a = np.asarray(x)
+    #print(a)
     draw(a, str(count))
 
 if __name__ == '__main__':
