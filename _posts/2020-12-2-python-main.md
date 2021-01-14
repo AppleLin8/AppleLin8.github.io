@@ -148,7 +148,7 @@ def draw_data(file):
     x = []
     with open(file) as file:
         for line in file:
-            x.append(line.strip())
+            x.append(eval(line.strip()))
         #print(x)
    
     a = np.asarray(x)
