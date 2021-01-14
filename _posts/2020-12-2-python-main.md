@@ -160,5 +160,11 @@ if __name__ == '__main__':
     #draw_data(sys.argv[1])
 ```
 
+
+
 ![draw_plot.png](https://AppleLin8.github.io/assets/img/blog/draw_plot_1.png)
+
+
+
+![draw_plot.png](https://AppleLin8.github.io/assets/img/blog/draw_plot.png)
 
