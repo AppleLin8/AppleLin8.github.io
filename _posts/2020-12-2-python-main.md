@@ -88,6 +88,8 @@ python -m pip install pandas seaborn -i https://pypi.tuna.tsinghua.edu.cn/simple
 画直方图
 
 ```python
+
+
 import sys
 import numpy as np
 import pandas as pd
@@ -102,9 +104,9 @@ myfont=FontProperties(fname=r'C:/Windows/Fonts/simhei.ttf',size=14)
 sns.set(font=myfont.get_name())
 plt.rcParams['axes.unicode_minus']=False      #显示负号
 
-def draw(a):
+def draw(a, title="n"):
     #print(a);
-    plt.rcParams['figure.figsize'] = (13, 5)    #设定图片大小
+    plt.rcParams['figure.figsize'] = (17, 8)    #设定图片大小
     f = plt.figure()                            #确定画布
     
     f.add_subplot(1,2,1)
@@ -113,7 +115,7 @@ def draw(a):
     plt.ylabel("频数", fontsize=16)
     plt.xticks(fontsize=16)                    #设置x轴刻度值的字体大小
     plt.yticks(fontsize=16)                   #设置y轴刻度值的字体大小
-    plt.title("(a)", fontsize=20)             #设置子图标题
+    plt.title("("+ title + "个32位随机数分布图)", fontsize=20)             #设置子图标题
     
     f.add_subplot(1,2,2)
     sns.distplot(a)                           #绘制密度直方图
@@ -146,18 +148,21 @@ def draw_demo():
 
 def draw_data(file):
     x = []
+    count = 0
+    
     with open(file) as file:
         for line in file:
+            count += 1
             x.append(eval(line.strip()))
-        #print(x)
    
+    print("number count=", count)
+
     a = np.asarray(x)
-    draw(a)
+    draw(a, str(count))
 
 if __name__ == '__main__':
-    draw_demo()
-    
-    #draw_data(sys.argv[1])
+    draw_data(sys.argv[1])
+
 ```
 
 
