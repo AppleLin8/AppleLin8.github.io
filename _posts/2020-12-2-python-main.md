@@ -85,7 +85,7 @@ python -m pip install pandas seaborn -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 ```
 
-画直方图
+## 画直方图v1
 
 ```python
 
@@ -160,6 +160,104 @@ def draw_data(file):
 
 if __name__ == '__main__':
     draw_data(sys.argv[1])
+
+```
+
+## 画直方图v2
+
+```python
+
+
+import sys
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from datetime import datetime
+
+sns.set()                                   #设置seaborn默认格式
+np.random.seed(0)                           #设置随机种子数
+
+from matplotlib.font_manager import FontProperties   #显示中文，并指定字体
+myfont=FontProperties(fname=r'C:/Windows/Fonts/simhei.ttf',size=14)
+sns.set(font=myfont.get_name())
+plt.rcParams['axes.unicode_minus']=False      #显示负号
+
+oldtime=datetime.now()
+
+def draw(a, title="n"):
+    #print(a);
+    plt.rcParams['figure.figsize'] = (17, 8)    #设定图片大小
+    f = plt.figure()                            #确定画布
+    
+    f.add_subplot(1,2,1)
+    sns.distplot(a, kde=False)                 #绘制频数直方图
+    #sns.distplot(a, kde=True,hist=True)                 #绘制频数直方图
+    plt.ylabel("频数", fontsize=16)
+    plt.xticks(fontsize=16)                    #设置x轴刻度值的字体大小
+    plt.yticks(fontsize=16)                   #设置y轴刻度值的字体大小
+    plt.title("("+ title + "个32位随机数分布图)", fontsize=20)             #设置子图标题
+    
+    f.add_subplot(1,2,2)
+    sns.distplot(a)                           #绘制密度直方图
+    plt.ylabel("密度", fontsize=16)
+    plt.xticks(fontsize=16)                  #设置x轴刻度值的字体大小
+    plt.yticks(fontsize=16)                  #设置y轴刻度值的字体大小
+    
+    plt.subplots_adjust(wspace=0.3)         #调整两幅子图的间距
+    plt.show()
+
+def delta_minute(startTime, endTime):
+    total_seconds = (endTime - startTime).total_seconds()
+    mins = total_seconds / 60
+    return int(mins)
+    
+def get_diff_str(diff, str1):
+    s = ''
+    if diff != 0:
+        s = s + str(diff) + str1
+        
+    return s
+
+def show_delta(newtime):
+    global oldtime
+    s = '相差：'
+    
+    s + get_diff_str(delta_minute(oldtime, newtime), ' 分钟 ')
+    s + get_diff_str((newtime-oldtime).seconds, ' 秒 ')
+    s + get_diff_str((newtime-oldtime).microseconds / 1000, ' 毫秒 ')
+    
+    oldtime = newtime
+    
+    print(s)  
+
+def show_array_info(a):
+    print(a)  
+    print("数据类型",type(a))           #打印数组数据类型  
+    print("数组元素数据类型：",a.dtype) #打印数组元素数据类型  
+    print("数组元素总数：",a.size)      #打印数组尺寸，即数组元素总数  
+    print("数组形状：",a.shape)         #打印数组形状  
+    print("数组的维度数目",a.ndim)      #打印数组的维度数目
+    
+def draw_data1(file):
+    a = np.loadtxt(file)
+    draw(a, str(a.size))
+
+def draw_data2(file):
+    global oldtime
+    
+    oldtime=datetime.now()
+    a = np.loadtxt(file)
+    show_delta(datetime.now())
+
+    show_array_info(a)
+    show_delta(datetime.now())
+    
+    draw(a, str(a.size))
+    show_delta(datetime.now())
+    
+if __name__ == '__main__':
+    draw_data2(sys.argv[1])
 
 ```
 
