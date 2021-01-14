@@ -167,7 +167,6 @@ if __name__ == '__main__':
 
 ```python
 
-
 import sys
 import numpy as np
 import pandas as pd
@@ -186,7 +185,6 @@ plt.rcParams['axes.unicode_minus']=False      #显示负号
 oldtime=datetime.now()
 
 def draw(a, title="n"):
-    #print(a);
     plt.rcParams['figure.figsize'] = (17, 8)    #设定图片大小
     f = plt.figure()                            #确定画布
     
@@ -215,17 +213,17 @@ def delta_minute(startTime, endTime):
 def get_diff_str(diff, str1):
     s = ''
     if diff != 0:
-        s = s + str(diff) + str1
+        s += str(diff) + str1
         
     return s
 
 def show_delta(newtime):
     global oldtime
-    s = '相差：'
+    s = '用时：'
     
-    s + get_diff_str(delta_minute(oldtime, newtime), ' 分钟 ')
-    s + get_diff_str((newtime-oldtime).seconds, ' 秒 ')
-    s + get_diff_str((newtime-oldtime).microseconds / 1000, ' 毫秒 ')
+    s += get_diff_str(delta_minute(oldtime, newtime), ' 分钟 ')
+    s += get_diff_str((newtime-oldtime).seconds, ' 秒 ')
+    s += get_diff_str((newtime-oldtime).microseconds / 1000, ' 毫秒 ')
     
     oldtime = newtime
     
@@ -237,22 +235,25 @@ def show_array_info(a):
     print("数组元素数据类型：",a.dtype) #打印数组元素数据类型  
     print("数组元素总数：",a.size)      #打印数组尺寸，即数组元素总数  
     print("数组形状：",a.shape)         #打印数组形状  
-    print("数组的维度数目",a.ndim)      #打印数组的维度数目
-    
+    print("数组的维度数目",a.ndim)      #打印数组的维度数目  
+
 def draw_data1(file):
     a = np.loadtxt(file)
     draw(a, str(a.size))
-
+    
 def draw_data2(file):
     global oldtime
     
+    print('-----------1 loadtxt --------------')
     oldtime=datetime.now()
     a = np.loadtxt(file)
     show_delta(datetime.now())
-
+    
+    print('-----------2 show array --------------')
     show_array_info(a)
     show_delta(datetime.now())
     
+    print('-----------3 draw --------------')
     draw(a, str(a.size))
     show_delta(datetime.now())
     
@@ -260,6 +261,30 @@ if __name__ == '__main__':
     draw_data2(sys.argv[1])
 
 ```
+
+
+
+结果
+
+```bash
+-----------1 loadtxt --------------
+用时：0.999 毫秒 
+-----------2 show array --------------
+[1.81397318e+09 4.51097333e+08 7.47925723e+08 1.57521411e+09
+ 6.28680555e+08 2.98246167e+08 1.64331751e+09 2.06213070e+09]
+数据类型 <class 'numpy.ndarray'>
+数组元素数据类型： float64
+数组元素总数： 8
+数组形状： (8,)
+数组的维度数目 1
+用时：0.97 毫秒 
+-----------3 draw --------------
+用时：4 秒 549.668 毫秒 
+```
+
+
+
+![draw_plot.png](https://AppleLin8.github.io/assets/img/blog/draw_plot_2.png)
 
 
 
