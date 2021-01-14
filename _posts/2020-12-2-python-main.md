@@ -167,7 +167,8 @@ if __name__ == '__main__':
 
 ![draw_plot.png](https://AppleLin8.github.io/assets/img/blog/draw_plot_1.png)
 
-
+>说明：
+>这里有list a=[1,1,1, ...1, 10, 10,...，10]，list a有10个1和5个10，画了两幅直方图。其中左图是频数图，即纵坐标是频数，表示落在相应区间的样本数；右图是频率图，即纵坐标是概率，表示落在某区间的概率。
 
 ![draw_plot.png](https://AppleLin8.github.io/assets/img/blog/draw_plot.png)
 
