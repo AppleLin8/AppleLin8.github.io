@@ -236,6 +236,26 @@ def show_array_info(a):
     print("数组元素总数：",a.size)      #打印数组尺寸，即数组元素总数  
     print("数组形状：",a.shape)         #打印数组形状  
     print("数组的维度数目",a.ndim)      #打印数组的维度数目  
+    
+def iter_loadtxt(filename, delimiter=',', skiprows=0, dtype=float, len1=10000000):
+    def iter_func():
+        count=0
+        with open(filename, 'r') as infile:
+            for _ in range(skiprows):
+                next(infile)
+            for line in infile:
+                line = line.rstrip().split(delimiter)
+                for item in line:
+                    yield dtype(eval(item))
+                count += 1
+                if count >= len1:
+                    break
+                
+        iter_loadtxt.rowlength = len(line)
+
+    data = np.fromiter(iter_func(), dtype=dtype)
+    data = data.reshape((-1, iter_loadtxt.rowlength))
+    return data
 
 def draw_data1(file):
     a = np.loadtxt(file)
@@ -256,6 +276,31 @@ def draw_data2(file):
     print('-----------3 draw --------------')
     draw(a, str(a.size))
     show_delta(datetime.now())
+
+def draw_data3(file):
+    a = iter_loadtxt(file, '\n')
+    draw(a, str(a.size))
+    
+def max_min_data(file):
+    max = '0'
+    min = '0xFFFFFFFF'
+    count = 0
+    with open(file, 'r') as f:
+        for line in f:
+            count += 1
+            s = line.strip()
+            x = eval(s)
+            if x > eval(max):
+                max = s
+            if x < eval(min):
+                min = s
+            
+            if count > 10000000:
+                break
+        
+        print("max  : ", max)
+        print("min  : ", min)
+        print("count：", count)
     
 if __name__ == '__main__':
     draw_data2(sys.argv[1])
