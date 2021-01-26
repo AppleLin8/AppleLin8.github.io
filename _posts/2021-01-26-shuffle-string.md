@@ -65,7 +65,7 @@ excerpt: sort string by vector
 
 You can create an auxiliary string t of length n.
 
-Assign t[indexes[i]] to s[i] for each i from 0 to n-1.
+Assign t[i] to s[indexes[i]] for each i from 0 to n-1.
 
 # 解决方案 <span id="3">
 
@@ -155,7 +155,7 @@ void Solution::restoreString(string& s, vector<int>& indices)
 
     for(size_t i = 0; i < s.length(); i++)
     {
-        s[i] = t[indices[i]];
+        s[indices[i]] = t[i];
     }
 
     cout << s << endl << endl;
